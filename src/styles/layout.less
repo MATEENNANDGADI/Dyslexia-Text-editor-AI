@@ -1,0 +1,153 @@
+@media print {
+  body {
+    background: #FFF;
+  }
+
+  .page {
+    width: 100%;
+    margin: 0;
+  }
+
+  .ql-toolbar, header, .sidebar {
+    display: none;
+  }
+}
+
+
+html {
+  height: 100%;
+}
+
+body {
+@apply bg-white;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "OpenDyslexicRegular", sans-serif !important;
+}
+
+.header {
+@apply container mx-auto py-4 px-4 bg-white;
+  height: 90px;
+
+  .burger-link {
+    float: right;
+    @apply block  md:hidden cursor-pointer;
+  }
+}
+
+
+.logo {
+  cursor: pointer;
+  img {
+    float: left;
+    margin-right: 15px;
+  }
+
+  .logo-text {
+    line-height: 58px;
+    font-size: 1.5em;
+    font-weight: 700;
+  @apply text-blue-500;
+  }
+
+}
+
+
+.sidebar {
+  position: fixed;
+  height: 100%;
+  @apply hidden md:block flex flex-col w-64 h-screen bg-white  bg-blue-500 text-blue-100 rounded-r-lg;
+
+  .sidebar-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  @apply py-8;
+  }
+
+  .sidebar-btn {
+  @apply font-medium cursor-pointer block  px-4 pl-8 py-4 mt-4;
+
+    &:hover {
+      @apply bg-blue-100 text-blue-500;
+    }
+
+    &.active {
+      @apply bg-blue-100 text-blue-500;
+    }
+
+    svg {
+      /* material icons */
+      display: inline-block;
+      fill: currentColor;
+      margin-right: 5px;
+    }
+  }
+
+  /* ----- upload in sidebar ----- */
+  .btn-editor-upload {
+    overflow: hidden;
+    position: relative;
+    .photo-visible {
+      @apply inline-block w-full h-full cursor-pointer;
+    }
+    .photo-file {
+      font-size: 56px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
+}
+.sidebar-outer {
+  @apply hidden bg-black fixed inset-0 w-full opacity-30;
+}
+
+
+.page {
+  @apply md:pl-64
+}
+
+
+.interim-transcript {
+  @apply bg-white px-2 text-gray-500;
+}
+
+.sidebar-locale {
+  @apply px-4 mt-8;
+}
+.locale-select {
+  @apply inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100;
+}
+
+.sidebar-contribute {
+  @apply px-4 mt-8 text-xs text-blue-200 text-center;
+  &:hover {
+    @apply text-blue-100 underline;
+  }
+}
+
+
+
+/* ---- progressbar ----- */
+#progressbar {
+  @apply bg-gray-200 rounded-full;
+  height: 10px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+
+  .progress {
+    @apply bg-blue-500 rounded-full;
+    height: 100%;
+    width: 0%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

@@ -1,0 +1,34 @@
+input:checked ~ .toggle-dot {
+  transform: translateX(100%);
+  @apply bg-green-500;
+}
+
+
+
+.toggle {
+  @apply flex items-center cursor-pointer;
+  .toggle-line {
+    @apply block bg-gray-600 w-14 h-8 rounded-full;
+  }
+  .toggle-dot {
+    @apply absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition;
+  }
+  .toggle-label {
+    @apply ml-3 ;
+  }
+}
+
+.btn {
+  @apply py-2 px-2 md:px-4 text-gray-500 rounded ;
+
+  &:hover {
+    @apply text-white bg-blue-400;
+  }
+
+  &.primary {
+    @apply text-white bg-blue-400;
+    &:hover {
+      @apply text-white bg-blue-500;
+    }
+  }
+}
